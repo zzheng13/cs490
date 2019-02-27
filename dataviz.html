@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<title>DataViz</title>
+		<style type = "text/css">
+			#viz{
+				width:900px;
+				height:700px;
+			}
+		</style>
+		<script src="https://cdn.neo4jlabs.com/neovis.js/master/neovis.js"></script>
+	</head>
+	<script>
+		function draw(){
+			var config = {
+				container_id: "viz",
+				server_url:"bolt://35.174.184.102:32774",
+				server_user:"neo4j",
+				server_password:"aluminum-humans-commanders",
+				labels:{
+
+				},
+				relationships:{
+
+				},
+				initial_cypher:"MATCH (u:User)-[:POSTED]->(t:Tweet)-[:HAS_TAG]->(ht:Hashtag {tag: "thanksobama"})WHERE u.screen_name = "LeroyLovesUSA"RETURN *"
+
+			}
+			var viz = new NeoVis.default(config);
+			viz.render();
+		}
+	</script>
+	<body onload="draw()">
+		<p>"Welcome to this!"</p>
+		<div id="viz"></div>
+	</body>
+</html>
