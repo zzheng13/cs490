@@ -1,8 +1,0 @@
- 
-
-Current issue with GraphXR:
-As can be seen from the screenshot above, GraphXR provides Cypher Query input for the user. This is a great functionality for the users since they can manipulate with the visualization with their own interests, yet several problems may arise with this setting:
-1. To start with, even though the user is familiar with their own database and knows basic coding knowledge. Yet to utilize this function, one still need to learn the cypher query, and this may not be everyone’s interests.
-2. Moreover, this functionality allows users to touch part of the central code at the backend of the GraphXR, and it is considerably dangerous since the user may accidentally type in commands like: “Drop xxx”.
-
-In this way, the first step we should take would be to create a scripting interpreter with certain API which is easier to pick up and can translate the user input into Neo4j cypher query(JS). Once we accomplished that, we would like to improve the translator and translate the user’s input straight to the inner JS at GraphXR. Last but not the least, since JS is object languages, it executes without waiting for the previous command to finish. In this way, we may need to further develop our code so that the program can be executed line by line.
