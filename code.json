@@ -1,0 +1,34 @@
+[
+    {  
+        "description": "Here is a graphXR notebook demo, you need to import the graphXR.injection.js at first.",
+        "code": ""
+    }, {
+        "description": "Show World Map",
+        "code": "_app.controller.drawing.worldMap.show();"
+    }, {
+        "description": "Hide World Map",
+        "code": "//_app.controller.drawing.worldMap.hide();"
+    }, {
+        "description": "Load CSV Data",
+        "code":
+            "_app.controller.csvPlainFile.importCSV(\"'name','company','job','image' 'Weidong Yang','kineviz inc.','CEO','https://bit.ly/2GifuKK' 'Sony Green','kineviz inc.','Director of Business Development','https://bit.ly/2IAInVp' 'Shih-Wen Young','kineviz inc.','Principal Scientist','https://bit.ly/2vbllfL' 'Raymond Larrett','kineviz inc.','Graphic Designer','https://bit.ly/2ZmgbvA'\",() => {}) "
+    },
+    {
+        "description": "Open Connetor",
+        "code":
+            "$('.left-toolbar .item-connector').click(); $('.connector .tour-Yield').click();"
+    },
+    {
+        "description": "Yield with Company",
+        "code":
+            "$(\".connector .yield input[name='node']\").val(\"Company\"); $(\".connector .yield input[name='relationship']\").val(\"at_company\"); $(\".connector .yield select[name='select-prop']\").val(\"company\"); $(\".connector .yield select[name='select-prop']\").parents('tr').find(\"td .action-add\").click(); $(\".connector .yield select[name='select-prop']\").parents('table').find(\"tbody input[type='checkbox']\").click(); $(\".connector .yield .action-run\").click();"
+    }, {
+        "description": "Show Image as ICON",
+        "code":
+            "_app.store.dispatch(_AppActions.autoShowImage(true));"
+    }, {
+        "description": "Hidden Left Tool bar",
+        "code":
+            "//_app.store.dispatch(_AppActions.showTopbar(\"\"));"
+    }
+]
