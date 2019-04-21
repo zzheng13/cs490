@@ -1,4 +1,4 @@
-   {  
+  [ {  
         "description": "Here is a graphXR notebook demo, you need to import the graphXR.injection.js at first.",
         "code": ""
     }, {
@@ -29,4 +29,4 @@
         "description": "Hidden Left Tool bar",
         "code":
             "//_app.store.dispatch(_AppActions.showTopbar(\"\"));"
-    }
+    }]
