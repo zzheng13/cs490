@@ -6,7 +6,7 @@
         "code": "_app.controller.drawing.worldMap.show();"
     }, {
         "description": "Hide World Map",
-        "code": "//_app.controller.drawing.worldMap.hide();"
+        "code": "_app.controller.drawing.worldMap.hide();"
     }, {
         "description": "Load CSV Data",
         "code":
