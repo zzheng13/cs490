@@ -1,32 +1,78 @@
-  [ {  
-        "description": "Here is a graphXR notebook demo, you need to import the graphXR.injection.js at first.",
-        "code": ""
-    }, {
-        "description": "Show World Map",
-        "code": "_app.controller.drawing.worldMap.show();"
-    }, {
-        "description": "Hide World Map",
-        "code": "//_app.controller.drawing.worldMap.hide();"
-    }, {
-        "description": "Load CSV Data",
-        "code":
-            "_app.controller.csvPlainFile.importCSV(\"'name','company','job','image'\",() => {}) "
-    },
-    {
-        "description": "Open Connetor",
-        "code":
-            "$('.left-toolbar .item-connector').click(); $('.connector .tour-Yield').click();"
-    },
-    {
-        "description": "Yield with Company",
-        "code":
-            "$(\".connector .yield input[name='node']\").val(\"Company\"); $(\".connector .yield input[name='relationship']\").val(\"at_company\"); $(\".connector .yield select[name='select-prop']\").val(\"company\"); $(\".connector .yield select[name='select-prop']\").parents('tr').find(\"td .action-add\").click(); $(\".connector .yield select[name='select-prop']\").parents('table').find(\"tbody input[type='checkbox']\").click(); $(\".connector .yield .action-run\").click();"
-    }, {
-        "description": "Show Image as ICON",
-        "code":
-            "_app.store.dispatch(_AppActions.autoShowImage(true));"
-    }, {
-        "description": "Hidden Left Tool bar",
-        "code":
-            "//_app.store.dispatch(_AppActions.showTopbar(\"\"));"
-    }]
+[
+                //{index, code, description, response}
+                {
+                    description: `1. Search "Jon Snow"`,
+                    code: `
+                    let searchInputNode = document.getElementsByClassName("tour-input-data")[0];
+
+                    Object.getOwnPropertyDescriptor(searchInputNode.__proto__, 'value').set.call(searchInputNode, "Snow");
+                    searchInputNode.dispatchEvent(new Event("input",{ bubbles: true }));
+
+                    Common.untilCheck(() => {
+                        let searchResultPanel = document.getElementsByClassName('tour-main-label')
+                        if (searchResultPanel[0] && searchResultPanel[0].firstChild) {
+                            searchResultPanel[0].firstChild.click();
+                            return true;
+                        }
+                    }).then(() => {
+                        let searchResultList = document.querySelector(".tour-main-label #content").children
+                        for (let i = 0; i <= searchResultList.length; i++) {
+                            if (searchResultList[i].innerText == "name:Jon Snow") {
+                                searchResultList[i].click();
+                                break;
+                            }
+                        }
+                    })
+                    `
+                }, {
+                    description: `Expand with "killed" edge`,
+                    code: `
+                        _GXR.TaskList.expandSelectedNodesAction.func({
+                            relationships:['killed'],
+                            limit:1000
+                        })
+                    `
+                }, {
+                    description: `Turn on "Auto Show Image"`,
+                    code: `
+                        _app.store.dispatch(_AppActions.autoShowImage(true));
+                    `
+                }, {
+                    description: `Turn off "Auto Show Image`,
+                    code: `
+                        _app.store.dispatch(_AppActions.autoShowImage(false));
+                    `
+                },
+                {
+                    description: `Cypher query "Match (c:Character)-[k:killed]-(c1:Character) return * limit 3000"`,
+                    code: `
+                        _app.store.dispatch(_AppActions.excuteCommand('Match (c:Character)-[k:killed]-(c1:Character) return * limit 3000'));
+                    `
+                },
+                {
+                    description: `Show parametric plot`,
+                    code: `
+                        let parametricIcon = document.getElementsByClassName('tour-fa-sitemap')[0];
+                        parametricIcon.click()
+                        setTimeout(()=>{
+                            let parametricButton = document.getElementsByClassName('tour-Parametric')[0];
+                            parametricButton.click();
+                            setTimeout(()=>{
+                                let parametricApplyButton = document.getElementsByClassName('tour-kv-button-parametric-apply')[0];
+                                parametricApplyButton.click();
+                            },1000)
+                        },1000)
+                    `
+                }, {
+                    description: `Show normal plot`,
+                    code: `
+                        let parametricResetButton = document.getElementsByClassName('tour-kv-button-parametric-reset')[0]
+                        parametricResetButton.click();
+                        `
+                }, {
+                    description: `Clean graph (remove all nodes) `,
+                    code: `
+                        _app.store.dispatch(_AppActions.clearGraph());
+                    `
+                },
+            ],
