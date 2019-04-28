@@ -18,7 +18,7 @@
                         }).then(() => {
                             let searchResultList = document.querySelector(\".tour-main-label #content\").children
                             for (let i = 0; i <= searchResultList.length; i++) {
-                                if (searchResultList[i].innerText == "name:Jon Snow") {
+                                if (searchResultList[i].innerText == \"name:Jon Snow\") {
                                     searchResultList[i].click();
                                     break;
                                 }
