@@ -1,5 +1,4 @@
 [
-                //{index, code, description, response}
                 {
                     "description": "1. Search \"Jon Snow\"",
                     "code": 
