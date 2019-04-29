@@ -29,14 +29,14 @@
     {
         "description": "Show parametric plot",
         "code": 
-           " let parametricIcon = document.getElementsByClassName('tour-fa-sitemap')[0];parametricIcon.click() setTimeout(()=>{ let parametricButton = document.getElementsByClassName('tour-Parametric')[0]; parametricButton.click(); setTimeout(()=>{ let parametricApplyButton = document.getElementsByClassName('tour-kv-button-parametric-apply')[0]; parametricApplyButton.click();},1000)},1000)"
+           " let parametricIcon = document.getElementsByClassName('tour-fa-sitemap')[0];parametricIcon.click(); setTimeout(()=>{ let parametricButton = document.getElementsByClassName('tour-Parametric')[0]; parametricButton.click(); setTimeout(()=>{ let parametricApplyButton = document.getElementsByClassName('tour-kv-button-parametric-apply')[0]; parametricApplyButton.click();},1000)},1000)"
         
     }, 
 
     {
         "description": "Show normal plot",
         "code": 
-            "let parametricResetButton = document.getElementsByClassName('tour-kv-button-parametric-reset')[0] parametricResetButton.click();"
+            "let parametricResetButton = document.getElementsByClassName('tour-kv-button-parametric-reset')[0]; parametricResetButton.click();"
             
     }, {
         "description": "Clean graph (remove all nodes)",
